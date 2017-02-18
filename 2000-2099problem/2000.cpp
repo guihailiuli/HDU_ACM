@@ -1,21 +1,30 @@
+/*
+思路： 
+先判断第一个和第二个，若第一个大于第二个，则将第一个与第二个交换，否则不交换
+再判断第二个和第三个，若第二个大于第3个，则将第二个与第三个交换，否则不交换
+此时，第三个为最大的
+再判断第一个和第二个，若第一个大于第二个，则将第一个与第二个交换，否则不交换
+完成排序，输出 
+*/
 #include<stdio.h>
-int main()
-{
-	int i,j;
-	char m,a[3];
-	while(gets(a))
-	{
-		for(i=0;i<=2;i++)
-			for(j=0;j<2-i;j++)
+
+int main(){
+	int i, j;
+	char temp, a[3];
+	while(gets(a)) {
+		for(i=0; i<=1; i++) 
+		{
+			for(j=0; j<2-i; j++) 
 			{
-				if(a[j]>a[j+1])
-				{
-				 m=a[j];
-				 a[j]=a[j+1];
-				 a[j+1]=m;					
+				if(a[j] > a[j+1]) {
+					temp = a[j];
+					a[j] = a[j+1];
+					a[j+1] = temp;
 				}
 			}
-			printf("%c %c %c\n",a[0],a[1],a[2]);
+			
+		}
+		printf("%c %c %c\n",a[0],a[1],a[2]);
 	}
 	return 0;
 }
